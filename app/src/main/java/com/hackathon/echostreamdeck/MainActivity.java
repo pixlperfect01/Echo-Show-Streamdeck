@@ -30,17 +30,6 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
 
 public class MainActivity extends AppCompatActivity {
-    // 1. Register the permissions contract
-    private final ActivityResultLauncher<String> requestPermissionLauncher =
-            registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
-                if (isGranted) {
-                    // Permission is granted. Proceed with your task.
-                    Toast.makeText(this, "Bluetooth permission granted!", Toast.LENGTH_SHORT).show();
-                } else {
-                    // Permission is denied. Explain to the user or disable functionality.
-                    Toast.makeText(this, "Bluetooth permission denied, please allow bluetooth permission.", Toast.LENGTH_SHORT).show();
-                }
-            });
     private AppBarConfiguration appBarConfiguration;
 
     @Override
@@ -58,14 +47,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         binding.key.setOnClickListener(v -> {
-            // 2. Check if permission is already granted
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH) ==
-                    PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "Permission already granted", Toast.LENGTH_SHORT).show();
-            } else {
-                // 3. Launch the request dialog
-                requestPermissionLauncher.launch(Manifest.permission.CAMERA);
-            }
+            Toast.makeText(this, "Yippee!", Toast.LENGTH_SHORT).show();
         });
 
         WindowInsetsControllerCompat windowInsetsController =
