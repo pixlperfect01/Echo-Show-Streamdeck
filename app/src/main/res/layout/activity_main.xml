@@ -13,10 +13,28 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/deck_background" />
+        app:srcCompat="@drawable/deck_background"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <ImageButton
         android:id="@+id/key1"
+        android:layout_width="199dp"
+        android:layout_height="131dp"
+        android:background="@drawable/key_button"
+        android:contentDescription="Play"
+        android:elevation="6dp"
+        android:padding="26dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@android:color/white"
+        tools:layout_editor_absoluteY="55dp" />
+
+    <ImageButton
+        android:id="@+id/key"
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:background="@drawable/key_button"
@@ -25,20 +43,16 @@
         android:padding="26dp"
         android:scaleType="centerInside"
         android:src="@drawable/ic_play"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.098"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.223"
-        app:tint="@android:color/white" />
+        app:tint="@android:color/white"
+        tools:layout_editor_absoluteX="604dp"
+        tools:layout_editor_absoluteY="90dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="328dp"
-        android:layout_marginBottom="296dp"
+        android:layout_marginStart="872dp"
+        android:layout_marginBottom="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_dialog_email" />
