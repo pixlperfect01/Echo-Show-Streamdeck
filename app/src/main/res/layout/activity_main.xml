@@ -14,8 +14,8 @@
         android:layout_height="match_parent"
         android:scaleType="fitXY"
         app:srcCompat="@drawable/deck_background"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="-128dp" />
 
     <ImageButton
         android:id="@+id/key1"
@@ -54,10 +54,10 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="872dp"
-        android:layout_marginBottom="36dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/key"
         app:srcCompat="@android:drawable/ic_dialog_email" />
 
     <com.google.android.material.appbar.AppBarLayout
