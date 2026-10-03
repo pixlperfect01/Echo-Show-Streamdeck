@@ -1,12 +1,17 @@
 package com.hackathon.echostreamdeck;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -18,13 +23,24 @@ import com.hackathon.echostreamdeck.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
 
 public class MainActivity extends AppCompatActivity {
-
+    // 1. Register the permissions contract
+    private final ActivityResultLauncher<String> requestPermissionLauncher =
+            registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
+                if (isGranted) {
+                    // Permission is granted. Proceed with your task.
+                    Toast.makeText(this, "Bluetooth permission granted!", Toast.LENGTH_SHORT).show();
+                } else {
+                    // Permission is denied. Explain to the user or disable functionality.
+                    Toast.makeText(this, "Bluetooth permission denied, please allow bluetooth permission.", Toast.LENGTH_SHORT).show();
+                }
+            });
     private AppBarConfiguration appBarConfiguration;
 
     @Override
@@ -41,11 +57,16 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        binding.fab.setOnClickListener(
-                view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAnchorView(R.id.fab)
-                        .setAction("Action", null).show()
-        );
+        binding.fab.setOnClickListener(v -> {
+            // 2. Check if permission is already granted
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH) ==
+                    PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this, "Permission already granted", Toast.LENGTH_SHORT).show();
+            } else {
+                // 3. Launch the request dialog
+                requestPermissionLauncher.launch(Manifest.permission.CAMERA);
+            }
+        });
 
         WindowInsetsControllerCompat windowInsetsController =
                 WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
