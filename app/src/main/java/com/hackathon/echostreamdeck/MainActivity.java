@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        binding.fab.setOnClickListener(v -> {
+        binding.key.setOnClickListener(v -> {
             // 2. Check if permission is already granted
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH) ==
                     PackageManager.PERMISSION_GRANTED) {
