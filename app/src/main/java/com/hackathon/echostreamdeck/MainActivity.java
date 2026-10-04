@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private BluetoothAdapter bluetoothAdapter = null;
 
     private ArrayList<ImageButton> macroButtons;
-    private boolean noBlue = true;
+    private boolean noBlue = false;
     InputStream inputStream;
     OutputStream outputStream;
 
@@ -115,17 +115,12 @@ public class MainActivity extends AppCompatActivity {
 
 // Cancel discovery because it slows down connection
         bluetoothAdapter.cancelDiscovery();
-        Log.d("BT", "1");
         try {
             // Connect the device through the socket. This will block until it succeeds or throws an exception
             mmSocket.connect();
-            Log.d("BT", "2");
-
             // If successful, proceed to manage the connection (send/receive data streams)
             inputStream = mmSocket.getInputStream();
             outputStream = mmSocket.getOutputStream();
-
-            Log.d("BT", "3");
         } catch (IOException connectException) {
             // Unable to connect; close the socket and get out
             try {
@@ -133,14 +128,6 @@ public class MainActivity extends AppCompatActivity {
             } catch (IOException closeException) {
                 Log.e(TAG, "Could not close the client socket", closeException);
             }
-            Log.e("BT", "fuck", connectException);
-            Log.d("BT", "4");
-        }
-
-        try {
-            outputStream.write(42);
-        } catch (IOException e) {
-            Log.e("BT", "fuck", e);
         }
     }
 
