@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        binding.key.setOnClickListener(v -> {
+        binding.key1.setOnClickListener(v -> {
             Toast.makeText(this, "Yippee!", Toast.LENGTH_SHORT).show();
         });
 
