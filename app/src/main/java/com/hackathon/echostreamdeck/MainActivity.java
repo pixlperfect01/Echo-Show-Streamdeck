@@ -30,7 +30,6 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
 
 public class MainActivity extends AppCompatActivity {
-    private AppBarConfiguration appBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +46,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
         binding.key1.setOnClickListener(v -> {
+            Toast.makeText(this, "Yippee!", Toast.LENGTH_SHORT).show();
+        });
+        binding.key2.setOnClickListener(v -> {
+            Toast.makeText(this, "Yippee!", Toast.LENGTH_SHORT).show();
+        });
+        binding.key3.setOnClickListener(v -> {
             Toast.makeText(this, "Yippee!", Toast.LENGTH_SHORT).show();
         });
 

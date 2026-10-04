@@ -78,6 +78,21 @@
                 android:padding="26dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_play"
+                android:hapticFeedbackEnabled="true"
+                app:tint="@android:color/white" />
+
+            <ImageButton
+                android:id="@+id/key2"
+                android:layout_width="172dp"
+                android:layout_height="172dp"
+                android:layout_weight="0"
+                android:background="@drawable/key_button"
+                android:contentDescription="Play"
+                android:elevation="6dp"
+                android:padding="26dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_play"
+                android:hapticFeedbackEnabled="true"
                 app:tint="@android:color/white" />
 
             <ImageButton
@@ -91,19 +106,7 @@
                 android:padding="26dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_play"
-                app:tint="@android:color/white" />
-
-            <ImageButton
-                android:id="@+id/key"
-                android:layout_width="172dp"
-                android:layout_height="172dp"
-                android:layout_weight="0"
-                android:background="@drawable/key_button"
-                android:contentDescription="Play"
-                android:elevation="6dp"
-                android:padding="26dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_play"
+                android:hapticFeedbackEnabled="true"
                 app:tint="@android:color/white" />
 
             <ImageButton
@@ -117,6 +120,7 @@
                 android:padding="26dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_play"
+                android:hapticFeedbackEnabled="true"
                 app:tint="@android:color/white" />
 
         </LinearLayout>
@@ -125,19 +129,6 @@
             android:layout_width="match_parent"
             android:layout_height="174dp"
             android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/key2"
-                android:layout_width="172dp"
-                android:layout_height="172dp"
-                android:layout_weight="0"
-                android:background="@drawable/key_button"
-                android:contentDescription="Play"
-                android:elevation="6dp"
-                android:padding="26dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_play"
-                app:tint="@android:color/white" />
 
             <ImageButton
                 android:id="@+id/key5"
@@ -150,6 +141,7 @@
                 android:padding="26dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_play"
+                android:hapticFeedbackEnabled="true"
                 app:tint="@android:color/white" />
 
             <ImageButton
@@ -163,6 +155,7 @@
                 android:padding="26dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_play"
+                android:hapticFeedbackEnabled="true"
                 app:tint="@android:color/white" />
 
             <ImageButton
@@ -176,6 +169,21 @@
                 android:padding="26dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_play"
+                android:hapticFeedbackEnabled="true"
+                app:tint="@android:color/white" />
+
+            <ImageButton
+                android:id="@+id/key8"
+                android:layout_width="172dp"
+                android:layout_height="172dp"
+                android:layout_weight="0"
+                android:background="@drawable/key_button"
+                android:contentDescription="Play"
+                android:elevation="6dp"
+                android:padding="26dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_play"
+                android:hapticFeedbackEnabled="true"
                 app:tint="@android:color/white" />
         </LinearLayout>
 
