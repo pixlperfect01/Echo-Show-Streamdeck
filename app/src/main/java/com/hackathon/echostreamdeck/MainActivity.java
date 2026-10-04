@@ -14,6 +14,8 @@ import android.bluetooth.BluetoothSocket;
 import android.content.Context;
 
 import android.content.Intent;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -28,6 +30,7 @@ import com.hackathon.echostreamdeck.databinding.ActivityMainBinding;
 
 import android.os.Handler;
 import android.os.Message;
+import android.text.Layout;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -58,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<ImageButton> upButtons;
     private ArrayList<ImageButton> downButtons;
     private ArrayList<ImageButton> syncButtons;
-
+    private boolean noBlue = true;
     InputStream inputStream;
     OutputStream outputStream;
 
@@ -75,8 +78,6 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         macroButtons = new ArrayList<>(Arrays.asList(new ImageButton[]{
                 binding.layout1Button1,
@@ -108,7 +109,14 @@ public class MainActivity extends AppCompatActivity {
                 WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         );
 
+        if(!noBlue) {
+            setupBluetooth();
+            setupButtons();
+        }
+    }
 
+    private void setupBluetooth(){
+        bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
         BluetoothSocket tmp = null;
         UUID MY_UUID = UUID.fromString("8ce255c0-200a-11e0-ac64-0800200c9a66"); // Standard SPP UUID
@@ -152,10 +160,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             Log.e("BT", "fuck", e);
         }
-
-
-        setupButtons();
-
     }
 
     private void setupButtons() {
@@ -163,15 +167,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Init buttons
-        for (ImageButton b : macroButtons) {
-            b.setOnClickListener(v -> {
-                try {
-                    outputStream.write(69);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            });
-        }
+        if(!noBlue)
+            for (ImageButton b : macroButtons) {
+                b.setOnClickListener(v -> {
+                    try {
+                        outputStream.write(69);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+            }
+
         for (ImageButton b : upButtons) {
             b.setOnClickListener(v -> {
 
