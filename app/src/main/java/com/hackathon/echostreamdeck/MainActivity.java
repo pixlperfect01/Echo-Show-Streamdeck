@@ -78,18 +78,18 @@ public class MainActivity extends AppCompatActivity {
                 WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         );
 
-        binding.layout1ButtonUp.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), Layout2.class);
-            v.getContext().startActivity(intent);
-        });
-        binding.layout1ButtonDown.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), Layout2.class);
-            v.getContext().startActivity(intent);
-        });
-        binding.layout1ButtonSync.setOnClickListener(v -> {
-            //Toast.makeText(this, "layout_2_button_sync!", Toast.LENGTH_SHORT).show();
-            Toast.makeText(this,binding.layout1ButtonSync.getContentDescription(),Toast.LENGTH_SHORT).show();
-        });
+//        binding.layout1ButtonUp.setOnClickListener(v -> {
+//            Intent intent = new Intent(v.getContext(), Layout2.class);
+//            v.getContext().startActivity(intent);
+//        });
+//        binding.layout1ButtonDown.setOnClickListener(v -> {
+//            Intent intent = new Intent(v.getContext(), Layout2.class);
+//            v.getContext().startActivity(intent);
+//        });
+//        binding.layout1ButtonSync.setOnClickListener(v -> {
+//            //Toast.makeText(this, "layout_2_button_sync!", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this,binding.layout1ButtonSync.getContentDescription(),Toast.LENGTH_SHORT).show();
+//        });
 
         if(!noBlue) {
             setupBluetooth();
