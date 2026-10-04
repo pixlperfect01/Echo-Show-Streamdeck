@@ -227,7 +227,7 @@
             android:hapticFeedbackEnabled="true"
             android:padding="0dp"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_play"
+            android:src="@drawable/ic_sync_arrow"
             android:visibility="visible"
             app:tint="@android:color/white"
             tools:visibility="visible" />
