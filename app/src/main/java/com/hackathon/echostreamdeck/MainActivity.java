@@ -4,18 +4,11 @@ package com.hackathon.echostreamdeck;
 // We would change the gradle config to have a compileSdk of 30, but it complains about other things that actually stop us from working when we do that.
 // The code still compiles with the errors, so they're basically warnings, and warnings don't matter :D
 
-import android.Manifest;
-import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothManager;
-import android.bluetooth.BluetoothProfile;
 import android.bluetooth.BluetoothSocket;
-import android.content.Context;
 
 import android.content.Intent;
-import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -28,16 +21,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.hackathon.echostreamdeck.databinding.ActivityMainBinding;
 
-import android.os.Handler;
-import android.os.Message;
-import android.text.Layout;
 import android.util.Log;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.core.view.WindowCompat;
@@ -46,21 +31,17 @@ import androidx.core.view.WindowInsetsControllerCompat;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Set;
 import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
 
-    BluetoothHelper bluetoothHelper;
     private static final String TAG = "BluetoothChatFragment";
     private BluetoothAdapter bluetoothAdapter = null;
 
     private ArrayList<ImageButton> macroButtons;
-    private ArrayList<ImageButton> upButtons;
-    private ArrayList<ImageButton> downButtons;
-    private ArrayList<ImageButton> syncButtons;
     private boolean noBlue = true;
     InputStream inputStream;
     OutputStream outputStream;
@@ -88,18 +69,6 @@ public class MainActivity extends AppCompatActivity {
                 binding.layout1Button6,
                 binding.layout1Button7,
                 binding.layout1Button8,
-        }));
-
-        upButtons = new ArrayList<>(Arrays.asList(new ImageButton[]{
-            binding.layout1ButtonUp
-        }));
-
-        downButtons = new ArrayList<>(Arrays.asList(new ImageButton[]{
-            binding.layout1ButtonDown
-        }));
-
-        syncButtons = new ArrayList<>(Arrays.asList(new ImageButton[]{
-            binding.layout1ButtonSync
         }));
 
         WindowInsetsControllerCompat windowInsetsController =
@@ -184,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
             for (ImageButton b : macroButtons) {
                 b.setOnClickListener(v -> {
                     try {
-                        outputStream.write(69);
+                        outputStream.write(b.getContentDescription().toString().getBytes(StandardCharsets.UTF_8));
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
