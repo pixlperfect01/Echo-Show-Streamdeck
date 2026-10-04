@@ -1,6 +1,10 @@
 package com.hackathon.echostreamdeck;
 
 import android.Manifest;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothManager;
+import android.bluetooth.BluetoothProfile;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
@@ -11,6 +15,7 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -21,6 +26,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.hackathon.echostreamdeck.databinding.ActivityMainBinding;
 
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -28,6 +34,10 @@ import android.widget.Toast;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,14 +55,16 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        binding.key1.setOnClickListener(v -> {
-            Toast.makeText(this, "Yippee!", Toast.LENGTH_SHORT).show();
-        });
-        binding.key2.setOnClickListener(v -> {
-            Toast.makeText(this, "Yippee!", Toast.LENGTH_SHORT).show();
-        });
-        binding.key3.setOnClickListener(v -> {
-            Toast.makeText(this, "Yippee!", Toast.LENGTH_SHORT).show();
+        binding.layout1Button1.setOnClickListener(v -> {
+            Set<BluetoothDevice> devices = BluetoothHelper.getConnectedDevices(this);
+            for(BluetoothDevice d : devices) {
+                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                    // OH GOD WE SOMEHOW DON'T HAVE BLUETOOTH (again)
+                    return;
+                }
+                Toast.makeText(this, d.getName(), Toast.LENGTH_SHORT).show();
+            }
+            Log.i("DBG", "hi");
         });
 
         WindowInsetsControllerCompat windowInsetsController =
