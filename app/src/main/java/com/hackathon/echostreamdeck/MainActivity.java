@@ -54,6 +54,12 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        WindowInsetsControllerCompat windowInsetsController =
+                WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
+        windowInsetsController.hide(WindowInsetsCompat.Type.systemBars());
+        windowInsetsController.setSystemBarsBehavior(
+                WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        );
 
         binding.layout1Button1.setOnClickListener(v -> {
             Set<BluetoothDevice> devices = BluetoothHelper.getConnectedDevices(this);
@@ -65,35 +71,39 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, d.getName(), Toast.LENGTH_SHORT).show();
             }
             Log.i("DBG", "hi");
+
         });
 
-        WindowInsetsControllerCompat windowInsetsController =
-                WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
-        windowInsetsController.hide(WindowInsetsCompat.Type.systemBars());
-        windowInsetsController.setSystemBarsBehavior(
-                WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-        );
-    }
+        binding.layout1Button2.setOnClickListener(v -> {
+            Toast.makeText(this, "layout_1_button_2!", Toast.LENGTH_SHORT).show();
+        });
+        binding.layout1Button3.setOnClickListener(v -> {
+            Toast.makeText(this, "layout_1_button_3!", Toast.LENGTH_SHORT).show();
+        });
+        binding.layout1Button4.setOnClickListener(v -> {
+            Toast.makeText(this, "layout_1_button_4!", Toast.LENGTH_SHORT).show();
+        });
+        binding.layout1Button5.setOnClickListener(v -> {
+            Toast.makeText(this, "layout_1_button_5!", Toast.LENGTH_SHORT).show();
+        });
+        binding.layout1Button6.setOnClickListener(v -> {
+            Toast.makeText(this, "layout_1_button_6!", Toast.LENGTH_SHORT).show();
+        });
+        binding.layout1Button7.setOnClickListener(v -> {
+            Toast.makeText(this, "layout_1_button_7!", Toast.LENGTH_SHORT).show();
+        });
+        binding.layout1Button8.setOnClickListener(v -> {
+            Toast.makeText(this, "layout_1_button_8!", Toast.LENGTH_SHORT).show();
+        });
+        binding.layout1ButtonUp.setOnClickListener(v -> {
+            Toast.makeText(this, "layout_1_button_up!", Toast.LENGTH_SHORT).show();
+        });
+        binding.layout1ButtonDown.setOnClickListener(v -> {
+            Toast.makeText(this, "layout_1_button_down!", Toast.LENGTH_SHORT).show();
+        });
+        binding.layout1ButtonSync.setOnClickListener(v -> {
+            Toast.makeText(this, "layout_1_button_sync!", Toast.LENGTH_SHORT).show();
+        });
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

@@ -189,39 +189,39 @@
         tools:visibility="visible">
 
         <ImageButton
-            android:id="@+id/layout_1_button_9"
+            android:id="@+id/layout_1_button_up"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/key_button"
+            android:background="@drawable/key_side_button"
             android:contentDescription="Play"
             android:elevation="6dp"
             android:hapticFeedbackEnabled="true"
             android:padding="0dp"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_play"
+            android:src="@drawable/ic_up_arrow"
             app:tint="@android:color/white" />
 
         <ImageButton
-            android:id="@+id/layout_1_button_10"
+            android:id="@+id/layout_1_button_down"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/key_button"
+            android:background="@drawable/key_side_button"
             android:contentDescription="Play"
             android:elevation="6dp"
             android:hapticFeedbackEnabled="true"
             android:padding="0dp"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_play"
+            android:src="@drawable/ic_down_arrow"
             app:tint="@android:color/white" />
 
         <ImageButton
-            android:id="@+id/layout_1_button_11"
+            android:id="@+id/layout_1_button_sync"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/key_button"
+            android:background="@drawable/key_side_button"
             android:contentDescription="Play"
             android:elevation="6dp"
             android:hapticFeedbackEnabled="true"
