@@ -22,7 +22,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.hackathon.echostreamdeck.databinding.ActivityMainBinding;
 
 import android.util.Log;
-import android.widget.ImageButton;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.core.view.WindowCompat;
@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "BluetoothChatFragment";
     private BluetoothAdapter bluetoothAdapter = null;
 
-    private ArrayList<ImageButton> macroButtons;
-    private boolean noBlue = false;
+    private ArrayList<View> macroButtons;
+    private boolean noBlue = true;
     InputStream inputStream;
     OutputStream outputStream;
 
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        macroButtons = new ArrayList<>(Arrays.asList(new ImageButton[]{
+        macroButtons = new ArrayList<>(Arrays.asList(new View[]{
                 binding.layout1Button1,
                 binding.layout1Button2,
                 binding.layout1Button3,
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Init buttons
         if(!noBlue)
-            for (ImageButton b : macroButtons) {
+            for (View b : macroButtons) {
                 b.setOnClickListener(v -> {
                     try {
                         outputStream.write(b.getContentDescription().toString().getBytes(StandardCharsets.UTF_8));

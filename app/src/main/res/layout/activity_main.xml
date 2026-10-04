@@ -45,60 +45,94 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <ImageButton
+            <FrameLayout
                 android:id="@+id/layout_1_button_1"
                 android:layout_width="182dp"
                 android:layout_height="182dp"
-                android:background="@drawable/key_button"
+                android:background="@drawable/key_bezel"
+                android:clickable="true"
                 android:contentDescription="1-1"
                 android:elevation="6dp"
+                android:focusable="true"
+                android:foreground="@drawable/key_ripple"
                 android:hapticFeedbackEnabled="true"
-                android:padding="26dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_play"
-                app:tint="@android:color/white" />
+                android:padding="6dp">
 
-            <ImageButton
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:importantForAccessibility="no"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/a1"
+                    app:shapeAppearanceOverlay="@style/KeyFaceCorners" />
+            </FrameLayout>
+
+            <FrameLayout
                 android:id="@+id/layout_1_button_2"
                 android:layout_width="182dp"
                 android:layout_height="182dp"
-                android:layout_weight="0"
-                android:background="@drawable/key_button"
+                android:background="@drawable/key_bezel"
+                android:clickable="true"
                 android:contentDescription="1-2"
                 android:elevation="6dp"
+                android:focusable="true"
+                android:foreground="@drawable/key_ripple"
                 android:hapticFeedbackEnabled="true"
-                android:padding="26dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_play"
-                app:tint="@android:color/white" />
+                android:padding="6dp">
 
-            <ImageButton
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:importantForAccessibility="no"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/a2"
+                    app:shapeAppearanceOverlay="@style/KeyFaceCorners" />
+            </FrameLayout>
+
+
+            <FrameLayout
                 android:id="@+id/layout_1_button_3"
                 android:layout_width="182dp"
                 android:layout_height="182dp"
-                android:layout_weight="0"
-                android:background="@drawable/key_button"
+                android:background="@drawable/key_bezel"
+                android:clickable="true"
                 android:contentDescription="1-3"
                 android:elevation="6dp"
+                android:focusable="true"
+                android:foreground="@drawable/key_ripple"
                 android:hapticFeedbackEnabled="true"
-                android:padding="26dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_play"
-                app:tint="@android:color/white" />
+                android:padding="6dp">
 
-            <ImageButton
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:importantForAccessibility="no"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/a3"
+                    app:shapeAppearanceOverlay="@style/KeyFaceCorners" />
+            </FrameLayout>
+
+            <FrameLayout
                 android:id="@+id/layout_1_button_4"
                 android:layout_width="182dp"
                 android:layout_height="182dp"
-                android:layout_weight="0"
-                android:background="@drawable/key_button"
+                android:background="@drawable/key_bezel"
+                android:clickable="true"
                 android:contentDescription="1-4"
                 android:elevation="6dp"
+                android:focusable="true"
+                android:foreground="@drawable/key_ripple"
                 android:hapticFeedbackEnabled="true"
-                android:padding="26dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_play"
-                app:tint="@android:color/white" />
+                android:padding="6dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:importantForAccessibility="no"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/a4"
+                    app:shapeAppearanceOverlay="@style/KeyFaceCorners" />
+            </FrameLayout>
 
         </LinearLayout>
 
@@ -107,61 +141,94 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <ImageButton
+            <FrameLayout
                 android:id="@+id/layout_1_button_5"
                 android:layout_width="182dp"
                 android:layout_height="182dp"
-                android:layout_weight="0"
-                android:background="@drawable/key_button"
+                android:background="@drawable/key_bezel"
+                android:clickable="true"
                 android:contentDescription="1-5"
                 android:elevation="6dp"
+                android:focusable="true"
+                android:foreground="@drawable/key_ripple"
                 android:hapticFeedbackEnabled="true"
-                android:padding="26dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_play"
-                app:tint="@android:color/white" />
+                android:padding="6dp">
 
-            <ImageButton
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:importantForAccessibility="no"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/a5"
+                    app:shapeAppearanceOverlay="@style/KeyFaceCorners" />
+            </FrameLayout>
+
+            <FrameLayout
                 android:id="@+id/layout_1_button_6"
                 android:layout_width="182dp"
                 android:layout_height="182dp"
-                android:layout_weight="0"
-                android:background="@drawable/key_button"
+                android:background="@drawable/key_bezel"
+                android:clickable="true"
                 android:contentDescription="1-6"
                 android:elevation="6dp"
+                android:focusable="true"
+                android:foreground="@drawable/key_ripple"
                 android:hapticFeedbackEnabled="true"
-                android:padding="26dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_play"
-                app:tint="@android:color/white" />
+                android:padding="6dp">
 
-            <ImageButton
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:importantForAccessibility="no"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/a6"
+                    app:shapeAppearanceOverlay="@style/KeyFaceCorners" />
+            </FrameLayout>
+
+            <FrameLayout
                 android:id="@+id/layout_1_button_7"
                 android:layout_width="182dp"
                 android:layout_height="182dp"
-                android:layout_weight="0"
-                android:background="@drawable/key_button"
+                android:background="@drawable/key_bezel"
+                android:clickable="true"
                 android:contentDescription="1-7"
                 android:elevation="6dp"
+                android:focusable="true"
+                android:foreground="@drawable/key_ripple"
                 android:hapticFeedbackEnabled="true"
-                android:padding="26dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_play"
-                app:tint="@android:color/white" />
+                android:padding="6dp">
 
-            <ImageButton
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:importantForAccessibility="no"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/a7"
+                    app:shapeAppearanceOverlay="@style/KeyFaceCorners" />
+            </FrameLayout>
+
+            <FrameLayout
                 android:id="@+id/layout_1_button_8"
                 android:layout_width="182dp"
                 android:layout_height="182dp"
-                android:layout_weight="0"
-                android:background="@drawable/key_button"
+                android:background="@drawable/key_bezel"
+                android:clickable="true"
                 android:contentDescription="1-8"
                 android:elevation="6dp"
+                android:focusable="true"
+                android:foreground="@drawable/key_ripple"
                 android:hapticFeedbackEnabled="true"
-                android:padding="26dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/ic_play"
-                app:tint="@android:color/white" />
+                android:padding="6dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:importantForAccessibility="no"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/a8"
+                    app:shapeAppearanceOverlay="@style/KeyFaceCorners" />
+            </FrameLayout>
+
         </LinearLayout>
 
     </LinearLayout>
