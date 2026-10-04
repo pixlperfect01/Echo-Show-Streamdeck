@@ -250,35 +250,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/key_side_button"
+            android:background="@drawable/key_button_white_background"
             android:contentDescription="up"
             android:elevation="6dp"
             android:hapticFeedbackEnabled="true"
             android:padding="0dp"
             android:scaleType="centerInside"
             android:src="@drawable/ic_up_arrow"
-            app:tint="@android:color/white" />
+            app:tint="@color/black" />
 
         <ImageButton
             android:id="@+id/layout_1_button_down"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/key_side_button"
+            android:background="@drawable/key_button_white_background"
             android:contentDescription="down"
             android:elevation="6dp"
             android:hapticFeedbackEnabled="true"
             android:padding="0dp"
             android:scaleType="centerInside"
             android:src="@drawable/ic_down_arrow"
-            app:tint="@android:color/white" />
+            app:tint="@color/black" />
 
         <ImageButton
             android:id="@+id/layout_1_button_sync"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/key_side_button"
+            android:background="@drawable/key_button_white_background"
             android:contentDescription="sync"
             android:elevation="6dp"
             android:hapticFeedbackEnabled="true"
@@ -286,7 +286,7 @@
             android:scaleType="centerInside"
             android:src="@drawable/ic_sync_arrow"
             android:visibility="visible"
-            app:tint="@android:color/white"
+            app:tint="@color/black"
             tools:visibility="visible" />
     </LinearLayout>
 
